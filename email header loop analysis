@@ -1,0 +1,23 @@
+title: email header analyzer for suspicious loops
+id: 9a50b5bd-5a60-4790-985d-42e26d317f86
+status: experimental
+description: Detect header
+author: Harinishree
+references:
+https://eprint.iacr.org/2014/694.pdf
+ tags:
+  - attack.discovery
+date: 2022/08/14
+logsource:
+    category: proxy
+detection:
+    selection:
+       v=spf1|contains: 'amazones.com -all'
+      c-uri-dkim|contains:
+        - 'bh=LwPigsj/hz6yJZ+fffqMuNkmJiw=;'
+    condition: selection
+fields:
+  - c-ip
+falsepositives:
+    - Legitimate use antispam
+level: medium
