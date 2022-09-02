@@ -7,7 +7,7 @@ references:
 https://eprint.iacr.org/2014/694.pdf
  tags:
   - attack.discovery
-date: 2022/08/14
+date: 30/8/22
 logsource:
     category: proxy
 detection:
